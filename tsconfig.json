@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "importHelpers": true,
+    "downlevelIteration": true,
+    "removeComments": true,
+    "moduleResolution": "node",
+    "lib": ["esnext", "dom"],
+    "module": "esnext",
+    "target": "es2018",
+    "baseUrl": ".",
+    "rootDirs": [
+      ".",
+      "dist/bin"
+    ],
+    "paths": {
+      // Must match name in package.json
+      "enterprise_fullstack_starter/*": [
+        "dist/bin/*"
+      ]
+    },
+    "types": []
+  },
+  "angularCompilerOptions": {
+    "disableTypeScriptVersionCheck": true,
+    "strictInjectionParameters": true
+  },
+  "include": [],
+  "bazelOptions": {
+    "devmodeTargetOverride": "es2018",
+    "suppressTsconfigOverrideWarnings": true
+  }
+}

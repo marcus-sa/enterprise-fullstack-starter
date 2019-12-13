@@ -1,0 +1,22 @@
+'**/BUILD':
+  - yarn bazel:format
+  - git add
+
+'*.bzl':
+  - yarn bazel:format
+  - git add
+
+'WORKSPACE':
+  - yarn bazel:format
+  - git add
+
+'*.{js,ts}':
+  - eslint --fix
+  - git add
+
+'*.{json,less,html,yaml,yml}':
+  - prettier --write
+  - git add
+
+'.circleci/config.yml':
+  - circleci config validate
