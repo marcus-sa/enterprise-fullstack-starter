@@ -57,10 +57,10 @@ ts_setup_workspace()
 http_archive(
     name = "rules_typescript_proto",
     # TODO: Update these values to the latest version
-    sha256 = "3ef93812b7c8589a5e7fbc7e9a8c1b2f9a982320f3e96443f8bcdd76b3ef6bc0",
-    strip_prefix = "rules_typescript_proto-88de411e84ca05133f584633871f1f417a52095e",
+    sha256 = "ebbe2de31cbc2cef4e6d6533bd51c3a9b2b43b76f00cf1146e81b5a2f71089b0",
+    strip_prefix = "rules_typescript_proto-0ae5d5aab03366269a511d2d74ffe2b86de3812d",
     urls = [
-        "https://github.com/Dig-Doug/rules_typescript_proto/archive/88de411e84ca05133f584633871f1f417a52095e.tar.gz",
+        "https://github.com/Dig-Doug/rules_typescript_proto/archive/0ae5d5aab03366269a511d2d74ffe2b86de3812d.tar.gz",
     ],
 )
 
