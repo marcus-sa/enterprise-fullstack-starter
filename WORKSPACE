@@ -73,7 +73,7 @@ rules_typescript_proto_dependencies()
 ################################
 git_repository(
     name = "bazel_toolchains",
-    commit = "74b04f0ae8ca2a569779855b0056161eb954e5cf",
+    commit = "f2709de075dba8a439c4d55aa8219e2c0aed170c",
     remote = "https://github.com/bazelbuild/bazel-toolchains",
 )
 
