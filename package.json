@@ -109,7 +109,7 @@
     "jest-cli": "25.0.0",
     "source-map-support": "0.5.16",
     "prettier": "1.19.1",
-    "rollup": "1.27.11",
+    "rollup": "1.27.12",
     "lint-staged": "9.5.0",
     "rollup-plugin-amd": "4.0.0",
     "rollup-plugin-babel": "4.3.3",
