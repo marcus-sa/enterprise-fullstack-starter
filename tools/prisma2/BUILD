@@ -1,6 +1,0 @@
-package(default_visibility = ["//:__subpackages__"])
-
-exports_files([
-    "tsconfig.json",
-    "tsconfig.node.json",
-])
