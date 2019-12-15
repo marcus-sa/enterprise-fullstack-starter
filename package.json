@@ -77,7 +77,7 @@
     "@babel/cli": "7.7.5",
     "@babel/core": "7.7.5",
     "@babel/preset-env": "7.7.6",
-    "@babel/preset-modules": "0.1.1",
+    "@babel/preset-modules": "0.1.2",
     "@bazel/bazel": "2.0.0-rc3",
     "@bazel/buildifier": "0.29.0",
     "@bazel/hide-bazel-files": "0.42.3",
