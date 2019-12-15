@@ -20,6 +20,7 @@ load("@build_bazel_rules_nodejs//:index.bzl", "yarn_install")
 yarn_install(
     name = "npm",
     package_json = "//:package.json",
+    quiet = False,
     yarn_lock = "//:yarn.lock",
 )
 
@@ -27,6 +28,16 @@ yarn_install(
 load("@npm//:install_bazel_dependencies.bzl", "install_bazel_dependencies")
 
 install_bazel_dependencies()
+
+http_archive(
+    name = "bazel_skylib",
+    sha256 = "1dde365491125a3db70731e25658dfdd3bc5dbdfd11b840b3e987ecf043c7ca0",
+    url = "https://github.com/bazelbuild/bazel-skylib/releases/download/0.9.0/bazel_skylib-0.9.0.tar.gz",
+)
+
+load("@bazel_skylib//:workspace.bzl", "bazel_skylib_workspace")
+
+bazel_skylib_workspace()
 
 ####################################################
 # Support for using proto buffers
