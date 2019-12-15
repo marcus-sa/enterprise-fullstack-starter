@@ -1,0 +1,97 @@
+diff --git a/node_modules/prisma2/build/index.js b/node_modules/prisma2/build/index.js
+index 14ff3ee..a6f7c56 100755
+--- a/node_modules/prisma2/build/index.js
++++ b/node_modules/prisma2/build/index.js
+@@ -88437,7 +88437,7 @@ class LiftDown {
+         return new LiftDown();
+     }
+     // parse arguments
+-    parse(argv) {
++    parse(argv, datamodelPath) {
+         return __awaiter(this, void 0, void 0, function* () {
+             // parse the arguments according to the spec
+             const args = cli_1.arg(argv, {
+@@ -108208,7 +108208,7 @@ class LiftCommand {
+     static new(cmds) {
+         return new LiftCommand(cmds);
+     }
+-    parse(argv) {
++    parse(argv, datamodelPath) {
+         return __awaiter(this, void 0, void 0, function* () {
+             // parse the arguments according to the spec
+             const args = cli_1.arg(argv, {
+@@ -108231,7 +108231,7 @@ class LiftCommand {
+                     throw new Error(`Cannot run ${chalk_1.default.bold(command)} because there is a ${chalk_1.default.bold('prisma2 dev')} command running in this directory.
+ Please ${theme_1.gamboge(`stop ${chalk_1.default.bold('prisma2 dev')} first`)}, then try ${chalk_1.default.greenBright.bold(command)} again`);
+                 }
+-                return cmd.parse(args._.slice(1));
++                return cmd.parse(args._.slice(1), datamodelPath);
+             }
+             return cli_1.unknownCommand(LiftCommand.help, args._[0]);
+         });
+@@ -137817,7 +137817,7 @@ class LiftWatch {
+         return new LiftWatch(providerAliases);
+     }
+     // parse arguments
+-    parse(argv) {
++    parse(argv, datamodelPath) {
+         return __awaiter(this, void 0, void 0, function* () {
+             const args = cli_1.arg(argv, {
+                 '--preview': Boolean,
+@@ -151327,7 +151327,7 @@ class LiftSave {
+         return new LiftSave();
+     }
+     // parse arguments
+-    parse(argv) {
++    parse(argv, datamodelPath) {
+         return __awaiter(this, void 0, void 0, function* () {
+             // parse the arguments according to the spec
+             const args = cli_1.arg(argv, {
+@@ -175905,6 +175905,7 @@ class CLI {
+                 '-h': '--help',
+                 '--version': Boolean,
+                 '-v': '--version',
++                '-s': '--schema'
+             });
+             if (cli_1.isError(args)) {
+                 return this.help(args.message);
+@@ -175919,7 +175920,14 @@ class CLI {
+             // check if we have that subcommand
+             const cmd = this.cmds[args._[0]];
+             if (cmd) {
+-                return cmd.parse(args._.slice(1));
++            		let cmdArgs = args._.slice(1);
++            		const schemaIndex = cmdArgs.findIndex(arg => arg === '--schema');
++								let schema;
++            		if (schemaIndex >= 0) {
++            			schema = cmdArgs[schemaIndex + 1];
++            			cmdArgs = cmdArgs.slice(schemaIndex, 2);
++								}
++                return cmd.parse(cmdArgs, schema);
+             }
+             // unknown command
+             return cli_1.unknownCommand(CLI.help, args._[0]);
+@@ -233744,10 +233752,12 @@ class Generate {
+         return new Generate();
+     }
+     // parse arguments
+-    parse(argv, minimalOutput = false) {
++    parse(argv, datamodelPath, minimalOutput = false) {
+         var _a, _b, _c, _d;
+         return __awaiter(this, void 0, void 0, function* () {
+-            const datamodelPath = yield cli_1.getSchemaPath();
++            if (!datamodelPath) {
++							datamodelPath = yield cli_1.getSchemaPath();
++						}
+             if (!datamodelPath) {
+                 throw new Error(`Can't find schema.prisma`); // TODO: Add this into a central place in getSchemaPath() as an arg
+             }
+@@ -247183,7 +247193,7 @@ class LiftUp {
+         return new LiftUp();
+     }
+     // parse arguments
+-    parse(argv) {
++    parse(argv, datamodelPath) {
+         return __awaiter(this, void 0, void 0, function* () {
+             // parse the arguments according to the spec
+             const args = cli_1.arg(argv, {
