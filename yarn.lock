@@ -1939,10 +1939,10 @@
   dependencies:
     optional "0.1.4"
 
-"@ngneat/spectator@4.10.0":
-  version "4.10.0"
-  resolved "https://registry.yarnpkg.com/@ngneat/spectator/-/spectator-4.10.0.tgz#3a6bd70e7f43cd34d2a0c7589140be1741b08eb1"
-  integrity sha512-ZYgRBx9usU7CFD6/foauSWHy/deFhr6xMeLAB++rzHbo10k6P6u+h/52ZwdnBrzfIMOkF/4VJ64LVXDannir3Q==
+"@ngneat/spectator@4.11.1":
+  version "4.11.1"
+  resolved "https://registry.yarnpkg.com/@ngneat/spectator/-/spectator-4.11.1.tgz#0f2de4c89c29e255396177f9efa6948a2557c977"
+  integrity sha512-zNRTEZpG7GH6f1nRxorO5uumN3A+xA/LFjwUkB5JCRN/fWtt8aE74PWsJ2qeQPMgJCCKZRkkyZ/UksLOxXejNQ==
   dependencies:
     "@testing-library/dom" "6.1.0"
     jquery "3.4.1"

@@ -97,7 +97,7 @@
     "@graphql-codegen/typescript-operations": "1.9.1",
     "@graphql-codegen/typescript-resolvers": "1.9.1",
     "@nestjs/testing": "6.10.12",
-    "@ngneat/spectator": "4.10.0",
+    "@ngneat/spectator": "4.11.1",
     "@types/express": "4.17.2",
     "@types/jest": "24.0.23",
     "@types/node": "12.12.18",
