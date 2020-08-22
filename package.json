@@ -125,7 +125,7 @@
     "terser": "4.4.3",
     "tsickle": "0.37.1",
     "tslib": "1.10.0",
-    "typescript": "3.7.3"
+    "typescript": "3.9.7"
   },
   "resolutions": {
     "source-map-support": "0.5.16",
