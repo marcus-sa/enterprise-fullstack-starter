@@ -70,7 +70,7 @@
     "requirejs": "2.3.6",
     "rxjs": "6.5.3",
     "systemjs": "6.1.7",
-    "type-graphql": "0.17.5",
+    "type-graphql": "0.17.6",
     "zone.js": "0.10.2"
   },
   "devDependencies": {
