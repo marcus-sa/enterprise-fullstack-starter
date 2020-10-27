@@ -80,7 +80,7 @@
     "@babel/cli": "7.7.7",
     "@babel/core": "7.7.7",
     "@babel/preset-env": "7.7.7",
-    "@babel/preset-modules": "0.1.2",
+    "@babel/preset-modules": "0.1.4",
     "@bazel/bazel": "2.0.0-rc3",
     "@bazel/buildifier": "0.29.0",
     "@bazel/hide-bazel-files": "0.42.3",
